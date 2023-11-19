@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { HuffmanService } from './huffman.service';
 
 @Controller('huffman')
@@ -30,5 +30,10 @@ export class HuffmanController {
     return JSON.stringify(
       this.huffmanService.decompress(compressedText, this.codeTable),
     );
+  }
+
+  @Get('dictionary')
+  getDictionary(): string {
+    return JSON.stringify(Array.from(this.codeTable));
   }
 }
