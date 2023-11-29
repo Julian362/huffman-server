@@ -34,6 +34,7 @@ export class HuffmanController {
 
   @Get('dictionary')
   getDictionary(): string {
-    return JSON.stringify(Array.from(this.codeTable));
+    const mapArray: [string, string][] = Array.from(this.codeTable);
+    return JSON.stringify(mapArray);
   }
 }

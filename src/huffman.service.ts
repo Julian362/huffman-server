@@ -33,9 +33,10 @@ export class HuffmanService {
       // ordena los nodos por su frecuencia de menor a mayor
       nodes.sort((a, b) => a.frequency - b.frequency);
 
-      // obtiene los dos nodos con menor frecuencia
+      // esto se hace para que se saquen los dos primeros nodos del arreglo en el orden correcto (el de menor frecuencia primero)
+      // obtiene los dos primeros nodos del arreglo
       const node1 = nodes.shift()!;
-      // el signo de exclamación al final de la línea es para indicarle a TypeScript que el valor no puede ser nulo
+      // obtiene el primer elemento del arreglo y lo elimina del arreglo
       const node2 = nodes.shift()!;
 
       // crea un nuevo nodo con los dos nodos anteriores como hijos y con la suma de sus frecuencias
